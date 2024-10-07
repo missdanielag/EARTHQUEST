@@ -13,13 +13,16 @@ int[] otrosPersonajesX = {600, 1000, 1500};
 
 void setup() {
   size(1920, 1080);
-  fondoInicio = loadImage("mainmenu4.jpg"); 
-  fondoSelect = loadImage("select2.jpg");
+  fondoInicio = loadImage("mainmenu6.jpg"); 
+  fondoSelect = loadImage("select4.png");
   fondoNivel1 = loadImage("atmosphere5.png");
   fondoNivel2 = loadImage("fondoprueba.jpg");
   personajeFijo = loadImage("personajeprin4.png");
   personajes = new PImage[14];
   personajes[0] = loadImage("personaje1.png");
+  personajes[1] = loadImage("personaje2.png");
+  personajes[2] = loadImage("personaje3.png");
+
   noSmooth();
   fullScreen();
 }
@@ -36,10 +39,10 @@ void draw() {
   }
 }
 void pantallaInicio() {
-  image(fondoInicio, 0, 0);
-  rect(150, 580, 515, 100);
+  image(fondoInicio, 100, 0);
+  rect(750, 460, 250, 100);
   fill(255, 0);
-  stroke(59, 134, 191);
+  noStroke();
 }
 void Select() {
   image(fondoSelect, 0, 0);
@@ -71,7 +74,7 @@ void Biosphere() {
 }
 void mousePressed() {
   if (estadoJuego.equals("Inicio")) {
-    if (mouseX > 150 && mouseX < 150 + 515 && mouseY > 580 && mouseY < 580 + 100) {
+    if (mouseX > 750 && mouseX < 750 + 250 && mouseY > 460 && mouseY < 460 + 100) {
       estadoJuego = "Select"; // Cambiar al nivel 1 60, 380, 400, 50)
     }
   }
